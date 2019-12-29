@@ -26,7 +26,7 @@ def getId(vector, idTargetVector):
 def getRatio(array1, array2):
     return str((len(array1) / 400) * 100) + '/' + str((len(array2) / 400) * 100)
      
-def MinMaxScaler(vector):
+def minMaxScaler(vector):
     min_max_scaler = preprocessing.MinMaxScaler(feature_range=(-1, 1))
     return min_max_scaler.fit_transform(vector) 
 
@@ -56,7 +56,7 @@ allImages = numpy.array(allImages, dtype = float)
 calculationMethod = calculateStandartDeviation
 pca = PCA(n_components=0.95)
 
-normalizationMethods = [plainDataset, scale, normalize, MinMaxScaler]
+normalizationMethods = [plainDataset, scale, normalize, minMaxScaler]
 
 for normalizationMethod in normalizationMethods:
     nX = normalizationMethod(allImages)
